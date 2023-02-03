@@ -1,0 +1,15 @@
+D:\BareProject\Entities\bin\Debug\net6.0\Entities.deps.json
+D:\BareProject\Entities\bin\Debug\net6.0\Entities.dll
+D:\BareProject\Entities\bin\Debug\net6.0\Entities.pdb
+D:\BareProject\Entities\bin\Debug\net6.0\Common.dll
+D:\BareProject\Entities\bin\Debug\net6.0\Common.pdb
+D:\BareProject\Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+D:\BareProject\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\BareProject\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+D:\BareProject\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+D:\BareProject\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\BareProject\Entities\obj\Debug\net6.0\Entities.csproj.CopyComplete
+D:\BareProject\Entities\obj\Debug\net6.0\Entities.dll
+D:\BareProject\Entities\obj\Debug\net6.0\refint\Entities.dll
+D:\BareProject\Entities\obj\Debug\net6.0\Entities.pdb
+D:\BareProject\Entities\obj\Debug\net6.0\ref\Entities.dll
