@@ -1,8 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Entities;
+using WebFramework.Api;
+using WebFramwork.Api;
 
-namespace BareProject.Models;
+namespace BareProject.Models.DTO;
 
-public class ServiceModel
+public class ServiceModel : BaseDto<ServiceModel, Service>
 {
     public string Name { get; set; }
     public ICollection<int> RawMaterialId { get; set; }

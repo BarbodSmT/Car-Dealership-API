@@ -1,4 +1,6 @@
+using AutoMapper;
 using BareProject.Models;
+using BareProject.Models.DTO;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Services;
@@ -11,10 +13,11 @@ namespace BareProject.Controllers.Api.V1;
 public class ServicesController : BaseController
 {
     private readonly IBusinessLogic _iLogic;
-
-    public ServicesController(IBusinessLogic logic)
+    private readonly IMapper _mapper;
+    public ServicesController(IBusinessLogic logic, IMapper mapper)
     {
         _iLogic = logic;
+        _mapper = mapper;
     }
     
     [HttpGet]
@@ -37,11 +40,7 @@ public class ServicesController : BaseController
     {
         if (!ModelState.IsValid) return BadRequest();
         float servicePrice = 0;
-        var serviceEntity = new Service
-        {
-            Name = input.Name,
-            Date = input.Date
-        };
+        var serviceEntity = _mapper.Map<Service>(input);
         foreach (var x in input.RawMaterialId)
         {
             var rMaterial = await _iLogic.BGetRawMaterial(x, cn);

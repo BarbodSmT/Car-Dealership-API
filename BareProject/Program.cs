@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using Services;
 using WebFramework.Configuration;
 using WebFramework.Middlewares;
+using WebFramwork.CustomMapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,7 @@ builder.Services.AddControllers().AddJsonOptions(o => o.JsonSerializerOptions
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.InitializeAutoMapper();
 var siteSettings = builder.Configuration.GetSection("SiteSettings").Get<SiteSettings>();
 builder.Services.AddDbContext(builder);
 builder.Services.AddCustomIdentity(siteSettings.IdentitySettings);
@@ -43,7 +45,4 @@ app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
-app.UseEndpoints(endpoints => {
-    endpoints.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
-});
 app.Run();

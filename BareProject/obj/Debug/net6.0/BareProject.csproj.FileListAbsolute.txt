@@ -82,3 +82,5 @@ D:\BareProject\BareProject\obj\Debug\net6.0\ref\BareProject.dll
 D:\BareProject\BareProject\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
 D:\BareProject\BareProject\bin\Debug\net6.0\Humanizer.dll
 D:\BareProject\BareProject\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\BareProject\BareProject\bin\Debug\net6.0\AutoMapper.dll
+D:\BareProject\BareProject\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -1,4 +1,6 @@
+using AutoMapper;
 using BareProject.Models;
+using BareProject.Models.DTO;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Services;
@@ -11,10 +13,11 @@ namespace BareProject.Controllers.Api.V1;
 public class RawMaterialsController : BaseController
 {
     private readonly IBusinessLogic _iLogic;
-
-    public RawMaterialsController(IBusinessLogic logic)
+    private readonly IMapper _mapper;
+    public RawMaterialsController(IBusinessLogic logic, IMapper map)
     {
         _iLogic = logic;
+        _mapper = map;
     }
     
     [HttpGet]
@@ -35,12 +38,7 @@ public class RawMaterialsController : BaseController
     public async Task<IActionResult> CreateRawMaterial(RawMaterialModel input, CancellationToken cn)
     {
         if (!ModelState.IsValid) return BadRequest();
-        var rEntity = new RawMaterial
-        {
-            Name = input.Name,
-            Price = input.Price,
-            Service = null
-        };
+        var rEntity = _mapper.Map<RawMaterial>(input);
         await _iLogic.BCreateRawMaterial(rEntity, cn);
         return Ok("مواد اولیه با موفقیت اضافه شد.");
     }
@@ -51,8 +49,7 @@ public class RawMaterialsController : BaseController
         if (!ModelState.IsValid) return BadRequest();
         var rawentity = await _iLogic.BGetRawMaterial(id, cn);
         if (rawentity == null) return BadRequest("آیدی مواد اولیه اشتباه است.");
-        rawentity.Name = input.Name;
-        rawentity.Price = input.Price;
+        rawentity = _mapper.Map<RawMaterial>(input);
         await _iLogic.BUpdateRawMaterial(rawentity, cn);
         return Ok("عملیات با موفقیت انجام شد.");
     }
