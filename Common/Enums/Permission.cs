@@ -2,9 +2,9 @@
 
 namespace Common.Enums;
 
-public enum Permission
+public struct Permission
 {
-    [Display(Name = "تست اول")] TestSajad = 1,
-    [Display(Name = "تست دوم")] TestSajadTwo = 2,
-    [Display(Name = "نمایش تست ها")] SeeTests = 3
+    public const string Customer = "Customer";
+    public const string Dealer = "Dealer";
+    public const string Manager = "Manager";
 }

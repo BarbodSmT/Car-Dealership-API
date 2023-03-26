@@ -11,7 +11,8 @@ namespace Data.Contracts
         IQueryable<TEntity> TableNoTracking { get; }
 
         void Add(TEntity entity, bool saveNow = true);
-        Task AddAsync(TEntity entity, CancellationToken cancellationToken, bool saveNow = true);
+        Task 
+            AddAsync(TEntity entity, CancellationToken cancellationToken, bool saveNow = true);
         void AddRange(IEnumerable<TEntity> entities, bool saveNow = true);
         Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken, bool saveNow = true);
         void Attach(TEntity entity);

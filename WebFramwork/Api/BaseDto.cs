@@ -9,8 +9,6 @@ namespace WebFramwork.Api
         where TDto : class, new()
         where TEntity : class, IEntity, new()
     {
-        //[Display(Name = "ردیف")]
-        //public TKey Id { get; set; }
 
         public TEntity ToEntity(IMapper mapper)
         {

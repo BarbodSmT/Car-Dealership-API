@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Common;
 using Data;
 using Data.Contracts;
@@ -10,39 +12,44 @@ using Microsoft.Extensions.Options;
 using Services;
 using WebFramework.Configuration;
 using WebFramework.Middlewares;
+using WebFramework.Swagger;
+using WebFramwork.Configuration;
 using WebFramwork.CustomMapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers().AddJsonOptions(o => o.JsonSerializerOptions
-    .ReferenceHandler = ReferenceHandler.Preserve);;
-;
+builder.Services.AddControllers();
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(z =>
+{
+    z.AddServices();
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.Configure<SiteSettings>(builder.Configuration.GetSection(nameof(SiteSettings)));
 builder.Services.InitializeAutoMapper();
 var siteSettings = builder.Configuration.GetSection("SiteSettings").Get<SiteSettings>();
-builder.Services.AddDbContext(builder);
+builder.Services.AddDbContext(builder.Configuration);
 builder.Services.AddCustomIdentity(siteSettings.IdentitySettings);
-builder.Services.AddScoped<IBusinessLogic, BusinessLogic>();
-builder.Services.AddScoped<IRepository<RawMaterial>, Repository<RawMaterial>>();
-builder.Services.AddScoped<IRepository<Service>, Repository<Service>>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddMinimalMvc();
+builder.Services.AddJwtAuthentication(siteSettings.JwtSettings);
 builder.Services.AddCustomApiVersioning();
+builder.Services.AddSwagger();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.IntializeDatabase();
+app.UseCustomExceptionHandler();
+app.UseHsts(app.Environment);
 app.UseHttpsRedirection();
-app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 app.UseRouting();
+app.UseSwaggerAndUi();
+app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers();
+app.UseEndpoints(config =>
+{
+    config.MapControllers(); // Map attribute routing
+    //    .RequireAuthorization(); Apply AuthorizeFilter as global filter to all endpoints
+    //config.MapDefaultControllerRoute(); // Map default route {controller=Home}/{action=Index}/{id?}
+});
 app.Run();

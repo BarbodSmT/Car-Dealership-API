@@ -9,17 +9,17 @@ namespace WebFramework.Api
 {
     public class ApiResult
     {
-        public bool isSuccess { get; set; }
-        public ApiResultStatusCode statusCode { get; set; }
+        public bool IsSuccess { get; set; }
+        public ApiResultStatusCode StatusCode { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string message { get; set; }
+        public string Message { get; set; }
 
         public ApiResult(bool isSuccess, ApiResultStatusCode statusCode, string message = null)
         {
-            this.isSuccess = isSuccess;
-            this.statusCode = statusCode;
-            this.message = message ?? statusCode.ToDisplay();
+            IsSuccess = isSuccess;
+            StatusCode = statusCode;
+            Message = message ?? statusCode.ToDisplay();
         }
 
         #region Implicit Operators
@@ -35,7 +35,7 @@ namespace WebFramework.Api
 
         public static implicit operator ApiResult(BadRequestObjectResult result)
         {
-            var message = result.Value.ToString();
+            var message = result.Value?.ToString();
             if (result.Value is SerializableError errors)
             {
                 var errorMessages = errors.SelectMany(p => (string[])p.Value).Distinct();
@@ -91,7 +91,7 @@ namespace WebFramework.Api
 
         public static implicit operator ApiResult<TData>(BadRequestObjectResult result)
         {
-            var message = result.Value.ToString();
+            var message = result.Value?.ToString();
             if (result.Value is SerializableError errors)
             {
                 var errorMessages = errors.SelectMany(p => (string[])p.Value).Distinct();

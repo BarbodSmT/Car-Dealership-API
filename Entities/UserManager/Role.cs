@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entities
 {
-    public class Role : IdentityRole<long>
+    public class Role : IdentityRole<int>
     {
         [StringLength(100)]
         public string? Description { get; set; }

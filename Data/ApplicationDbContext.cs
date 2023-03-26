@@ -8,10 +8,11 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using Entities.UserManager;
 
 namespace Data
 {
-    public class ApplicationDbContext : IdentityDbContext<User, Role, long, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
+    public class ApplicationDbContext : IdentityDbContext<User, Role, int>
     //DbContext
     {
         public ApplicationDbContext(DbContextOptions options)
