@@ -18,6 +18,7 @@
           "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
           "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.11",
+          "Sentry.NLog": "3.29.1",
           "Swashbuckle.AspNetCore": "6.5.0",
           "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
           "WebFramwork": "1.0.0"
@@ -125,6 +126,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/ElmahCore.MySql.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      },
+      "ElmahCore.Sql/2.1.2": {
+        "dependencies": {
+          "ElmahCore.Common": "2.1.2",
+          "System.Data.SqlClient": "4.8.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ElmahCore.Sql.dll": {
             "assemblyVersion": "2.1.2.0",
             "fileVersion": "2.1.2.0"
           }
@@ -945,6 +958,38 @@
           }
         }
       },
+      "NLog/5.1.2": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.2.1561"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/5.2.2": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "NLog": "5.1.2"
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.2.309"
+          }
+        }
+      },
+      "NLog.Web.AspNetCore/5.2.2": {
+        "dependencies": {
+          "NLog.Extensions.Logging": "5.2.2"
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Web.AspNetCore.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.2.2.821"
+          }
+        }
+      },
       "Pluralize.NET/1.0.2": {
         "runtime": {
           "lib/netstandard2.0/Pluralize.NET.dll": {
@@ -1020,6 +1065,26 @@
           "lib/netstandard2.0/Scrutor.dll": {
             "assemblyVersion": "3.0.1.0",
             "fileVersion": "3.0.1.0"
+          }
+        }
+      },
+      "Sentry/3.29.1": {
+        "runtime": {
+          "lib/net6.0/Sentry.dll": {
+            "assemblyVersion": "3.29.1.0",
+            "fileVersion": "3.29.1.0"
+          }
+        }
+      },
+      "Sentry.NLog/3.29.1": {
+        "dependencies": {
+          "NLog": "5.1.2",
+          "Sentry": "3.29.1"
+        },
+        "runtime": {
+          "lib/net6.0/Sentry.NLog.dll": {
+            "assemblyVersion": "3.29.1.0",
+            "fileVersion": "3.29.1.0"
           }
         }
       },
@@ -2047,12 +2112,16 @@
           "Common": "1.0.0",
           "ElmahCore": "2.1.2",
           "ElmahCore.MySql": "2.1.2",
+          "ElmahCore.Sql": "2.1.2",
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.1",
           "Microsoft.AspNetCore.Authorization": "6.0.1",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
           "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.0.0",
+          "NLog": "5.1.2",
+          "NLog.Extensions.Logging": "5.2.2",
+          "NLog.Web.AspNetCore": "5.2.2",
           "Services": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0",
           "Swashbuckle.AspNetCore.Filters": "6.1.0",
@@ -2128,6 +2197,13 @@
       "sha512": "sha512-QASeZFe5s5NRzF+GvkSU/N++jEpqhUr4R6yE+avRhALN1/KVqc3bDx9cQ5VloHn0OAvjMRehHgDLfYbFl9ASHw==",
       "path": "elmahcore.mysql/2.1.2",
       "hashPath": "elmahcore.mysql.2.1.2.nupkg.sha512"
+    },
+    "ElmahCore.Sql/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sqZ7tUXnhfGlewA7Gu8qazgN3pwQkHFzQTeeyKPEzHrplxwXw9cfAoPDc/+YKpfOdqwjQgdzWbkK31vwvm+wkQ==",
+      "path": "elmahcore.sql/2.1.2",
+      "hashPath": "elmahcore.sql.2.1.2.nupkg.sha512"
     },
     "Google.Protobuf/3.11.4": {
       "type": "package",
@@ -2717,6 +2793,27 @@
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
+    "NLog/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JfQY93ure3IPVTN3eabBewBGvrcXcWIlaesFEXdy5UzIymfIT9yCgLISYtM0cOhjWziIaUr/6Z9NC2RwtjwrsQ==",
+      "path": "nlog/5.1.2",
+      "hashPath": "nlog.5.1.2.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/5.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V6sd+0Hrk2XlU//XbUizFYTE8Hf8+xFkhi81shIhsKl4tvWFUYmjBY/zBy/wlQCt0K6mfseaEKnayRJVhIz5Iw==",
+      "path": "nlog.extensions.logging/5.2.2",
+      "hashPath": "nlog.extensions.logging.5.2.2.nupkg.sha512"
+    },
+    "NLog.Web.AspNetCore/5.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Qa6V7LXgbWNxYdZDLcQz/TjGrSfx32XThxAL+xoAtjplC2uCIhy27WiMIjznuMAJR3zjElIiYzMmPSsQ4LZSQ==",
+      "path": "nlog.web.aspnetcore/5.2.2",
+      "hashPath": "nlog.web.aspnetcore.5.2.2.nupkg.sha512"
+    },
     "Pluralize.NET/1.0.2": {
       "type": "package",
       "serviceable": true,
@@ -2786,6 +2883,20 @@
       "sha512": "sha512-biheXROWXbciLzPOg/PttVH4w4Q8ADx89bQP8eKiGf1IJj0EOLYRjoctsMGQzi4mB+e4ICMqFeA8Spr0NKN4ZA==",
       "path": "scrutor/3.0.1",
       "hashPath": "scrutor.3.0.1.nupkg.sha512"
+    },
+    "Sentry/3.29.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WSkE7LS496it0A9Sbfz7yvsg5/PCzxPAROKtmsZDrdrsks5kzKei9dN9/FeoL3XgUfRv5557jCG961bttTevrg==",
+      "path": "sentry/3.29.1",
+      "hashPath": "sentry.3.29.1.nupkg.sha512"
+    },
+    "Sentry.NLog/3.29.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9gA6BtlacbVkjKM162A1hwGzd+cPh5Q9xUAFLAzdIXpJ6vXZxIrX/vlTHcxJ1KCO26MUfnNTJ3o9+0bXpHZOPg==",
+      "path": "sentry.nlog/3.29.1",
+      "hashPath": "sentry.nlog.3.29.1.nupkg.sha512"
     },
     "SSH.NET/2016.1.0": {
       "type": "package",

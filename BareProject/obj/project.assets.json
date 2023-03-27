@@ -114,6 +114,19 @@
           "lib/netstandard2.0/ElmahCore.MySql.dll": {}
         }
       },
+      "ElmahCore.Sql/2.1.2": {
+        "type": "package",
+        "dependencies": {
+          "ElmahCore.Common": "2.1.2",
+          "System.Data.SqlClient": "4.8.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/ElmahCore.Sql.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ElmahCore.Sql.dll": {}
+        }
+      },
       "Google.Protobuf/3.11.4": {
         "type": "package",
         "dependencies": {
@@ -1297,6 +1310,44 @@
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "NLog/5.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      },
+      "NLog.Extensions.Logging/5.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "NLog": "5.1.2"
+        },
+        "compile": {
+          "lib/net6.0/NLog.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Extensions.Logging.dll": {}
+        }
+      },
+      "NLog.Web.AspNetCore/5.2.2": {
+        "type": "package",
+        "dependencies": {
+          "NLog.Extensions.Logging": "5.2.2"
+        },
+        "compile": {
+          "lib/net6.0/NLog.Web.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Web.AspNetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Pluralize.NET/1.0.2": {
         "type": "package",
         "compile": {
@@ -1404,6 +1455,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Scrutor.dll": {}
+        }
+      },
+      "Sentry/3.29.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Sentry.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Sentry.dll": {}
+        },
+        "build": {
+          "buildTransitive/Sentry.targets": {}
+        }
+      },
+      "Sentry.NLog/3.29.1": {
+        "type": "package",
+        "dependencies": {
+          "NLog": "4.5.11",
+          "Sentry": "3.29.1"
+        },
+        "compile": {
+          "lib/net6.0/Sentry.NLog.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Sentry.NLog.dll": {}
         }
       },
       "SSH.NET/2016.1.0": {
@@ -3029,12 +3105,16 @@
           "Common": "1.0.0",
           "ElmahCore": "2.1.2",
           "ElmahCore.MySql": "2.1.2",
+          "ElmahCore.Sql": "2.1.2",
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.1",
           "Microsoft.AspNetCore.Authorization": "6.0.1",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
           "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.0.0",
+          "NLog": "5.1.2",
+          "NLog.Extensions.Logging": "5.2.2",
+          "NLog.Web.AspNetCore": "5.2.2",
           "Services": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0",
           "Swashbuckle.AspNetCore.Filters": "6.1.0",
@@ -3181,6 +3261,18 @@
         "elmahcore.mysql.2.1.2.nupkg.sha512",
         "elmahcore.mysql.nuspec",
         "lib/netstandard2.0/ElmahCore.MySql.dll"
+      ]
+    },
+    "ElmahCore.Sql/2.1.2": {
+      "sha512": "sqZ7tUXnhfGlewA7Gu8qazgN3pwQkHFzQTeeyKPEzHrplxwXw9cfAoPDc/+YKpfOdqwjQgdzWbkK31vwvm+wkQ==",
+      "type": "package",
+      "path": "elmahcore.sql/2.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "elmahcore.sql.2.1.2.nupkg.sha512",
+        "elmahcore.sql.nuspec",
+        "lib/netstandard2.0/ElmahCore.Sql.dll"
       ]
     },
     "Google.Protobuf/3.11.4": {
@@ -5064,6 +5156,77 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
+    "NLog/5.1.2": {
+      "sha512": "JfQY93ure3IPVTN3eabBewBGvrcXcWIlaesFEXdy5UzIymfIT9yCgLISYtM0cOhjWziIaUr/6Z9NC2RwtjwrsQ==",
+      "type": "package",
+      "path": "nlog/5.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/net46/NLog.dll",
+        "lib/net46/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "nlog.5.1.2.nupkg.sha512",
+        "nlog.nuspec"
+      ]
+    },
+    "NLog.Extensions.Logging/5.2.2": {
+      "sha512": "V6sd+0Hrk2XlU//XbUizFYTE8Hf8+xFkhi81shIhsKl4tvWFUYmjBY/zBy/wlQCt0K6mfseaEKnayRJVhIz5Iw==",
+      "type": "package",
+      "path": "nlog.extensions.logging/5.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "lib/net461/NLog.Extensions.Logging.dll",
+        "lib/net461/NLog.Extensions.Logging.xml",
+        "lib/net6.0/NLog.Extensions.Logging.dll",
+        "lib/net6.0/NLog.Extensions.Logging.xml",
+        "lib/netstandard1.3/NLog.Extensions.Logging.dll",
+        "lib/netstandard1.3/NLog.Extensions.Logging.xml",
+        "lib/netstandard1.5/NLog.Extensions.Logging.dll",
+        "lib/netstandard1.5/NLog.Extensions.Logging.xml",
+        "lib/netstandard2.0/NLog.Extensions.Logging.dll",
+        "lib/netstandard2.0/NLog.Extensions.Logging.xml",
+        "lib/netstandard2.1/NLog.Extensions.Logging.dll",
+        "lib/netstandard2.1/NLog.Extensions.Logging.xml",
+        "nlog.extensions.logging.5.2.2.nupkg.sha512",
+        "nlog.extensions.logging.nuspec"
+      ]
+    },
+    "NLog.Web.AspNetCore/5.2.2": {
+      "sha512": "0Qa6V7LXgbWNxYdZDLcQz/TjGrSfx32XThxAL+xoAtjplC2uCIhy27WiMIjznuMAJR3zjElIiYzMmPSsQ4LZSQ==",
+      "type": "package",
+      "path": "nlog.web.aspnetcore/5.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "README.md",
+        "lib/net461/NLog.Web.AspNetCore.dll",
+        "lib/net461/NLog.Web.AspNetCore.xml",
+        "lib/net5.0/NLog.Web.AspNetCore.dll",
+        "lib/net5.0/NLog.Web.AspNetCore.xml",
+        "lib/net6.0/NLog.Web.AspNetCore.dll",
+        "lib/net6.0/NLog.Web.AspNetCore.xml",
+        "lib/netcoreapp3.1/NLog.Web.AspNetCore.dll",
+        "lib/netcoreapp3.1/NLog.Web.AspNetCore.xml",
+        "lib/netstandard2.0/NLog.Web.AspNetCore.dll",
+        "lib/netstandard2.0/NLog.Web.AspNetCore.xml",
+        "nlog.web.aspnetcore.5.2.2.nupkg.sha512",
+        "nlog.web.aspnetcore.nuspec"
+      ]
+    },
     "Pluralize.NET/1.0.2": {
       "sha512": "kr/sOAem5NPH7Ft0tNiaQOO7f/W7ExcLRERpgvg5BlVZimQ/d/MCxhnwnk+WL4dy5Bj/KjToHUl1azYYDfqzpA==",
       "type": "package",
@@ -5214,6 +5377,70 @@
         "lib/netstandard2.0/Scrutor.xml",
         "scrutor.3.0.1.nupkg.sha512",
         "scrutor.nuspec"
+      ]
+    },
+    "Sentry/3.29.1": {
+      "sha512": "WSkE7LS496it0A9Sbfz7yvsg5/PCzxPAROKtmsZDrdrsks5kzKei9dN9/FeoL3XgUfRv5557jCG961bttTevrg==",
+      "type": "package",
+      "path": "sentry/3.29.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/Sentry.targets",
+        "buildTransitive/Sentry.targets",
+        "lib/net461/Sentry.dll",
+        "lib/net461/Sentry.xml",
+        "lib/net5.0/Sentry.dll",
+        "lib/net5.0/Sentry.xml",
+        "lib/net6.0-android31.0/Sentry.dll",
+        "lib/net6.0-android31.0/Sentry.xml",
+        "lib/net6.0-ios16.1/Sentry.dll",
+        "lib/net6.0-ios16.1/Sentry.xml",
+        "lib/net6.0-maccatalyst16.1/Sentry.dll",
+        "lib/net6.0-maccatalyst16.1/Sentry.xml",
+        "lib/net6.0/Sentry.dll",
+        "lib/net6.0/Sentry.xml",
+        "lib/netcoreapp3.0/Sentry.dll",
+        "lib/netcoreapp3.0/Sentry.xml",
+        "lib/netstandard2.0/Sentry.dll",
+        "lib/netstandard2.0/Sentry.xml",
+        "lib/netstandard2.1/Sentry.dll",
+        "lib/netstandard2.1/Sentry.xml",
+        "sentry-nuget.png",
+        "sentry.3.29.1.nupkg.sha512",
+        "sentry.nuspec",
+        "tools/sentry-cli-Darwin-arm64",
+        "tools/sentry-cli-Darwin-x86_64",
+        "tools/sentry-cli-Linux-aarch64",
+        "tools/sentry-cli-Linux-i686",
+        "tools/sentry-cli-Linux-x86_64",
+        "tools/sentry-cli-Windows-i686.exe",
+        "tools/sentry-cli-Windows-x86_64.exe"
+      ]
+    },
+    "Sentry.NLog/3.29.1": {
+      "sha512": "9gA6BtlacbVkjKM162A1hwGzd+cPh5Q9xUAFLAzdIXpJ6vXZxIrX/vlTHcxJ1KCO26MUfnNTJ3o9+0bXpHZOPg==",
+      "type": "package",
+      "path": "sentry.nlog/3.29.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net461/Sentry.NLog.dll",
+        "lib/net461/Sentry.NLog.xml",
+        "lib/net5.0/Sentry.NLog.dll",
+        "lib/net5.0/Sentry.NLog.xml",
+        "lib/net6.0/Sentry.NLog.dll",
+        "lib/net6.0/Sentry.NLog.xml",
+        "lib/netstandard2.0/Sentry.NLog.dll",
+        "lib/netstandard2.0/Sentry.NLog.xml",
+        "lib/netstandard2.1/Sentry.NLog.dll",
+        "lib/netstandard2.1/Sentry.NLog.xml",
+        "sentry-nuget.png",
+        "sentry.nlog.3.29.1.nupkg.sha512",
+        "sentry.nlog.nuspec"
       ]
     },
     "SSH.NET/2016.1.0": {
@@ -9564,6 +9791,7 @@
       "Microsoft.AspNetCore.Mvc.Versioning >= 5.0.0",
       "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.11",
+      "Sentry.NLog >= 3.29.1",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "Swashbuckle.AspNetCore.SwaggerGen >= 6.5.0",
       "WebFramwork >= 1.0.0"
@@ -9651,6 +9879,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.11, )"
+          },
+          "Sentry.NLog": {
+            "target": "Package",
+            "version": "[3.29.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

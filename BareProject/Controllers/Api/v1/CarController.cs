@@ -78,10 +78,9 @@ public class CarController : BaseController
             var iOwner = await _userRepository.GetByIdAsync(cancellationToken, rEntity.OwnerId);
             if (iOwner == null)
                 return BadRequest("صاجب ماشین یافت نشد.");
-
+            updateCar.Owner!.Cars.Remove(updateCar);
             rEntity.Owner = iOwner;
             await _repository.UpdateAsync(rEntity, cancellationToken);
-            updateCar.Owner!.Cars.Remove(updateCar);
             iOwner.Cars.Add(rEntity);
             await _userRepository.UpdateAsync(iOwner, cancellationToken);
             await _userRepository.UpdateAsync(updateCar.Owner, cancellationToken);

@@ -20,6 +20,8 @@ using System.Net;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using ElmahCore.Mvc;
+using ElmahCore.Sql;
 using Entities.UserManager;
 
 namespace WebFramework.Configuration
@@ -100,7 +102,15 @@ namespace WebFramework.Configuration
             #endregion
         }
         
-
+        public static void AddElmahCore(this IServiceCollection services, IConfiguration configuration, SiteSettings siteSetting)
+        {
+            services.AddElmah<SqlErrorLog>(options =>
+            {
+                options.Path = siteSetting.ElmahPath;
+                options.ConnectionString = configuration.GetConnectionString("Elmah");
+                //options.CheckPermissionAction = httpContext => httpContext.User.Identity.IsAuthenticated;
+            });
+        }
         public static void AddJwtAuthentication(this IServiceCollection services, JwtSettings jwtSettings)
         {
             services.AddAuthentication(options =>

@@ -119,3 +119,12 @@ D:\BareProject\BareProject\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\BareProject\BareProject\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\BareProject\BareProject\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 D:\BareProject\BareProject\bin\Debug\net6.0\Swashbuckle.AspNetCore.Newtonsoft.dll
+D:\BareProject\BareProject\bin\Debug\net6.0\nlog.config
+D:\BareProject\BareProject\bin\Debug\net6.0\MyApi.xml
+D:\BareProject\BareProject\bin\Debug\net6.0\ElmahCore.Sql.dll
+D:\BareProject\BareProject\bin\Debug\net6.0\NLog.dll
+D:\BareProject\BareProject\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+D:\BareProject\BareProject\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+D:\BareProject\BareProject\bin\Debug\net6.0\Sentry.dll
+D:\BareProject\BareProject\bin\Debug\net6.0\Sentry.NLog.dll
+D:\BareProject\BareProject\obj\Debug\net6.0\Sentry.Attributes.cs

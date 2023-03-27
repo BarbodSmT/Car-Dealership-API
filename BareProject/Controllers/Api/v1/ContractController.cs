@@ -84,7 +84,7 @@ public class ContractController : BaseController
             await _userRepository.UpdateAsync(iDealer, cancellationToken);
             return Ok(contract);
         }
-
+        /*
         [HttpPut]
         [Authorize(Roles = Permission.Manager)]
         public virtual async Task<ApiResult> Update(int id, ContractDTO contract, CancellationToken cancellationToken)
@@ -101,23 +101,22 @@ public class ContractController : BaseController
                 return BadRequest("مشتری با ایدی مورد نظر یافت نشد.");
             if (iDealer == null)
                 return BadRequest("دلال با ایدی مورد نظر یافت نشد.");
-            var rEntity = _mapper.Map<Contract>(contract);
-            rEntity.Id = id;
-            rEntity.Car = iCar;
-            rEntity.Customer = iCustomer;
-            rEntity.Dealer = iDealer;
-            iCar.Contracts.Add(rEntity);
-            iCustomer.CustomerContracts.Add(rEntity);
-            iDealer.DealerContracts.Add(rEntity);
-            iCar.Owner!.Cars.Remove(iCar);
+
+            updateContract = _mapper.Map<Contract>(contract);
+            updateContract.Customer = iCustomer;
+            updateContract.Dealer = iDealer;
+            iCar.Contracts.Add(updateContract);
             iCar.Owner = iCustomer;
+            iCustomer.CustomerContracts.Add(updateContract);
+            iDealer.DealerContracts.Add(updateContract);
             iCustomer.Cars.Add(iCar);
-            await _repository.UpdateAsync(rEntity, cancellationToken);
+            await _repository.UpdateAsync(updateContract, cancellationToken);
+            await _carRepository.UpdateAsync(iCar, cancellationToken);
             await _userRepository.UpdateAsync(iDealer, cancellationToken);
             await _userRepository.UpdateAsync(iCustomer, cancellationToken);
-            await _carRepository.UpdateAsync(iCar, cancellationToken);
+            
             return Ok();
-        }
+        }*/
 
         [HttpDelete]
         [Authorize(Roles = Permission.Manager)]

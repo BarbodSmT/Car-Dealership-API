@@ -114,6 +114,19 @@
           "lib/netstandard2.0/ElmahCore.MySql.dll": {}
         }
       },
+      "ElmahCore.Sql/2.1.2": {
+        "type": "package",
+        "dependencies": {
+          "ElmahCore.Common": "2.1.2",
+          "System.Data.SqlClient": "4.8.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/ElmahCore.Sql.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ElmahCore.Sql.dll": {}
+        }
+      },
       "Google.Protobuf/3.11.4": {
         "type": "package",
         "dependencies": {
@@ -1271,6 +1284,44 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {}
         }
+      },
+      "NLog/5.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      },
+      "NLog.Extensions.Logging/5.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "NLog": "5.1.2"
+        },
+        "compile": {
+          "lib/net6.0/NLog.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Extensions.Logging.dll": {}
+        }
+      },
+      "NLog.Web.AspNetCore/5.2.2": {
+        "type": "package",
+        "dependencies": {
+          "NLog.Extensions.Logging": "5.2.2"
+        },
+        "compile": {
+          "lib/net6.0/NLog.Web.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/NLog.Web.AspNetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Pluralize.NET/1.0.2": {
         "type": "package",
@@ -3126,6 +3177,18 @@
         "lib/netstandard2.0/ElmahCore.MySql.dll"
       ]
     },
+    "ElmahCore.Sql/2.1.2": {
+      "sha512": "sqZ7tUXnhfGlewA7Gu8qazgN3pwQkHFzQTeeyKPEzHrplxwXw9cfAoPDc/+YKpfOdqwjQgdzWbkK31vwvm+wkQ==",
+      "type": "package",
+      "path": "elmahcore.sql/2.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "elmahcore.sql.2.1.2.nupkg.sha512",
+        "elmahcore.sql.nuspec",
+        "lib/netstandard2.0/ElmahCore.Sql.dll"
+      ]
+    },
     "Google.Protobuf/3.11.4": {
       "sha512": "dajCxjDCiPyZuqwZCkFJTwhn/0TJ5VesIs4fXvs56ez1VUi68JjhYMMsPjnJ9gcPqJwTMtXMU1WqUdXYiG1x4w==",
       "type": "package",
@@ -4974,6 +5037,77 @@
         "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.2.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "NLog/5.1.2": {
+      "sha512": "JfQY93ure3IPVTN3eabBewBGvrcXcWIlaesFEXdy5UzIymfIT9yCgLISYtM0cOhjWziIaUr/6Z9NC2RwtjwrsQ==",
+      "type": "package",
+      "path": "nlog/5.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/net46/NLog.dll",
+        "lib/net46/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "nlog.5.1.2.nupkg.sha512",
+        "nlog.nuspec"
+      ]
+    },
+    "NLog.Extensions.Logging/5.2.2": {
+      "sha512": "V6sd+0Hrk2XlU//XbUizFYTE8Hf8+xFkhi81shIhsKl4tvWFUYmjBY/zBy/wlQCt0K6mfseaEKnayRJVhIz5Iw==",
+      "type": "package",
+      "path": "nlog.extensions.logging/5.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "lib/net461/NLog.Extensions.Logging.dll",
+        "lib/net461/NLog.Extensions.Logging.xml",
+        "lib/net6.0/NLog.Extensions.Logging.dll",
+        "lib/net6.0/NLog.Extensions.Logging.xml",
+        "lib/netstandard1.3/NLog.Extensions.Logging.dll",
+        "lib/netstandard1.3/NLog.Extensions.Logging.xml",
+        "lib/netstandard1.5/NLog.Extensions.Logging.dll",
+        "lib/netstandard1.5/NLog.Extensions.Logging.xml",
+        "lib/netstandard2.0/NLog.Extensions.Logging.dll",
+        "lib/netstandard2.0/NLog.Extensions.Logging.xml",
+        "lib/netstandard2.1/NLog.Extensions.Logging.dll",
+        "lib/netstandard2.1/NLog.Extensions.Logging.xml",
+        "nlog.extensions.logging.5.2.2.nupkg.sha512",
+        "nlog.extensions.logging.nuspec"
+      ]
+    },
+    "NLog.Web.AspNetCore/5.2.2": {
+      "sha512": "0Qa6V7LXgbWNxYdZDLcQz/TjGrSfx32XThxAL+xoAtjplC2uCIhy27WiMIjznuMAJR3zjElIiYzMmPSsQ4LZSQ==",
+      "type": "package",
+      "path": "nlog.web.aspnetcore/5.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "README.md",
+        "lib/net461/NLog.Web.AspNetCore.dll",
+        "lib/net461/NLog.Web.AspNetCore.xml",
+        "lib/net5.0/NLog.Web.AspNetCore.dll",
+        "lib/net5.0/NLog.Web.AspNetCore.xml",
+        "lib/net6.0/NLog.Web.AspNetCore.dll",
+        "lib/net6.0/NLog.Web.AspNetCore.xml",
+        "lib/netcoreapp3.1/NLog.Web.AspNetCore.dll",
+        "lib/netcoreapp3.1/NLog.Web.AspNetCore.xml",
+        "lib/netstandard2.0/NLog.Web.AspNetCore.dll",
+        "lib/netstandard2.0/NLog.Web.AspNetCore.xml",
+        "nlog.web.aspnetcore.5.2.2.nupkg.sha512",
+        "nlog.web.aspnetcore.nuspec"
       ]
     },
     "Pluralize.NET/1.0.2": {
@@ -9468,12 +9602,16 @@
       "Common >= 1.0.0",
       "ElmahCore >= 2.1.2",
       "ElmahCore.MySql >= 2.1.2",
+      "ElmahCore.Sql >= 2.1.2",
       "Microsoft.AspNetCore.Authentication >= 2.2.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.1",
       "Microsoft.AspNetCore.Authorization >= 6.0.1",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
       "Microsoft.AspNetCore.Mvc.Versioning >= 5.0.0",
       "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer >= 5.0.0",
+      "NLog >= 5.1.2",
+      "NLog.Extensions.Logging >= 5.2.2",
+      "NLog.Web.AspNetCore >= 5.2.2",
       "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "Swashbuckle.AspNetCore.Filters >= 6.1.0",
@@ -9551,6 +9689,10 @@
             "target": "Package",
             "version": "[2.1.2, )"
           },
+          "ElmahCore.Sql": {
+            "target": "Package",
+            "version": "[2.1.2, )"
+          },
           "Microsoft.AspNetCore.Authentication": {
             "target": "Package",
             "version": "[2.2.0, )"
@@ -9574,6 +9716,18 @@
           "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
             "target": "Package",
             "version": "[5.0.0, )"
+          },
+          "NLog": {
+            "target": "Package",
+            "version": "[5.1.2, )"
+          },
+          "NLog.Extensions.Logging": {
+            "target": "Package",
+            "version": "[5.2.2, )"
+          },
+          "NLog.Web.AspNetCore": {
+            "target": "Package",
+            "version": "[5.2.2, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
