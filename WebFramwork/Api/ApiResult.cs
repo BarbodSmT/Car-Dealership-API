@@ -17,7 +17,7 @@ namespace WebFramework.Api
 
         public ApiResult(bool isSuccess, ApiResultStatusCode statusCode, string message = null)
         {
-            IsSuccess = isSuccess;
+            IsSuccess = IsSuccess;
             StatusCode = statusCode;
             Message = message ?? statusCode.ToDisplay();
         }

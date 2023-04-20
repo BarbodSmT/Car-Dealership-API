@@ -28,6 +28,7 @@ namespace Entities
         public User? Owner { get; set; }
         public int OwnerId { get; set; }
         public List<Contract> Contracts { get; set; } = new List<Contract>();
+        public List<CarPhoto> Photos { get; set; } = new List<CarPhoto>();
 
         public string Created { get; set; } = " ";
         public string CreatedByUserId { get; set; } = " ";
@@ -47,6 +48,11 @@ namespace Entities
             builder.Property(p => p.Miles).IsRequired();
             builder
                 .HasMany(s => s.Contracts)
+                .WithOne(g => g.Car)
+                .HasForeignKey(s => s.CarId)
+                .OnDelete(DeleteBehavior.Cascade);
+            builder
+                .HasMany(s => s.Photos)
                 .WithOne(g => g.Car)
                 .HasForeignKey(s => s.CarId)
                 .OnDelete(DeleteBehavior.Cascade);

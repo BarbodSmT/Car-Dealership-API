@@ -8,7 +8,9 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using Common;
 using Entities.UserManager;
+using Microsoft.AspNetCore.Http;
 
 namespace Data
 {

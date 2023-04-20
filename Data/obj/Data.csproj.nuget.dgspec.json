@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BareProject\\Data\\Data.csproj": {}
+    "D:\\Car-Dealership\\Data\\Data.csproj": {}
   },
   "projects": {
-    "D:\\BareProject\\Common\\Common.csproj": {
+    "D:\\Car-Dealership\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BareProject\\Common\\Common.csproj",
+        "projectUniqueName": "D:\\Car-Dealership\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "D:\\BareProject\\Common\\Common.csproj",
+        "projectPath": "D:\\Car-Dealership\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\SmT\\.nuget\\packages\\",
-        "outputPath": "D:\\BareProject\\Common\\obj\\",
+        "outputPath": "D:\\Car-Dealership\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SmT\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -35,20 +35,24 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.20.0, )"
+            },
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.AspNetCore.Authorization": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.AspNetCore.Mvc.DataAnnotations": {
               "target": "Package",
@@ -56,23 +60,23 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[7.0.4, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -99,34 +103,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\BareProject\\Data\\Data.csproj": {
+    "D:\\Car-Dealership\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BareProject\\Data\\Data.csproj",
+        "projectUniqueName": "D:\\Car-Dealership\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "D:\\BareProject\\Data\\Data.csproj",
+        "projectPath": "D:\\Car-Dealership\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\SmT\\.nuget\\packages\\",
-        "outputPath": "D:\\BareProject\\Data\\obj\\",
+        "outputPath": "D:\\Car-Dealership\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SmT\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\BareProject\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\BareProject\\Entities\\Entities.csproj"
+              "D:\\Car-Dealership\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\Car-Dealership\\Entities\\Entities.csproj"
               }
             }
           }
@@ -138,20 +142,24 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.20.0, )"
+            },
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.AspNetCore.Authorization": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
@@ -159,23 +167,23 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[7.0.4, )"
             }
           },
           "imports": [
@@ -194,34 +202,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\BareProject\\Entities\\Entities.csproj": {
+    "D:\\Car-Dealership\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BareProject\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\Car-Dealership\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\BareProject\\Entities\\Entities.csproj",
+        "projectPath": "D:\\Car-Dealership\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\SmT\\.nuget\\packages\\",
-        "outputPath": "D:\\BareProject\\Entities\\obj\\",
+        "outputPath": "D:\\Car-Dealership\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SmT\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\BareProject\\Common\\Common.csproj": {
-                "projectPath": "D:\\BareProject\\Common\\Common.csproj"
+              "D:\\Car-Dealership\\Common\\Common.csproj": {
+                "projectPath": "D:\\Car-Dealership\\Common\\Common.csproj"
               }
             }
           }
@@ -233,28 +241,32 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.20.0, )"
+            },
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.AspNetCore.Authorization": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
-              "version": "[6.0.13, )"
+              "version": "[7.0.4, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.27.0, )"
+              "version": "[6.28.0, )"
             }
           },
           "imports": [
@@ -273,7 +285,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

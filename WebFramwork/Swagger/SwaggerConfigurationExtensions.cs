@@ -44,9 +44,13 @@ namespace WebFramework.Swagger
             //Add services and configuration to use swagger
             services.AddSwaggerGen(options =>
             {
-                var xmlDocPath = Path.Combine(AppContext.BaseDirectory, "MyApi.xml");
+                options.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "API V1" });
+                options.SwaggerDoc("v2", new OpenApiInfo { Version = "v2", Title = "API V2" });
+                
+                var xmlFile = "CarDealership.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 //show controller XML comments like summary
-                options.IncludeXmlComments(xmlDocPath, true);
+                options.IncludeXmlComments(xmlPath, true);
 
                 options.EnableAnnotations();
 
@@ -69,8 +73,7 @@ namespace WebFramework.Swagger
                 //options.IgnoreObsoleteActions();
                 //options.IgnoreObsoleteProperties();
 
-                options.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "API V1" });
-                options.SwaggerDoc("v2", new OpenApiInfo { Version = "v2", Title = "API V2" });
+
 
                 #region Filters
                 //Enable to use [SwaggerRequestExample] & [SwaggerResponseExample]

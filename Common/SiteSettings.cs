@@ -5,6 +5,7 @@ namespace Common
 {
     public class SiteSettings
     {
+        public CloudinarySettings CloudinarySettings { get; set; }
         public string ElmahPath { get; set; }
         public JwtSettings JwtSettings { get; set; }
         public IdentitySettings IdentitySettings { get; set; }
@@ -27,5 +28,12 @@ namespace Common
         public string Audience { get; set; }
         public int NotBeforeMinutes { get; set; }
         public int ExpirationMinutes { get; set; }
+    }
+
+    public class CloudinarySettings
+    {
+        public string CloudName { get; set; }
+        public string ApiKey { get; set; }
+        public string ApiSecret { get; set; }
     }
 }

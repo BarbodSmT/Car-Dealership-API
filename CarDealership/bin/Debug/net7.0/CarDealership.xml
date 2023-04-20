@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Car-Dealership</name>
+    </assembly>
+    <members>
+        <member name="M:CarDealership.Controllers.Api.V1.CarController.AddPhoto(System.Int32,Microsoft.AspNetCore.Http.IFormFile,System.Threading.CancellationToken)">
+            <summary>
+            Add a photo to a car
+            </summary>
+            <param name="carid">The Id of the car</param>
+            <param name="PhotoFile">The photo of the car</param>
+            <param name="cancellationToken"></param>
+            <returns>returns photo entity</returns>
+        </member>
+        <member name="M:CarDealership.Controllers.Api.V1.CarController.DeletePhoto(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Delete a photo
+            </summary>
+            <param name="carid">The Id of the car</param>
+            <param name="photoid">The Id of the photo</param>
+            <param name="cancellationToken"></param>
+            <returns>return</returns>
+        </member>
+        <member name="M:CarDealership.Controllers.Api.V1.UserController.Token(CarDealership.Models.DTO.TokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            This method generate JWT Token
+            </summary>
+            <param name="tokenRequest">The information of token request</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
